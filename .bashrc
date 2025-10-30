@@ -10,3 +10,9 @@ source ~/.local/share/omarchy/default/bash/rc
 source /opt/Xilinx/Vivado/2022.2/settings64.sh
 
 alias py='python3'
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+export TERM=xterm-kitty
+
+[[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh"
+
