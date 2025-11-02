@@ -1,0 +1,141 @@
+@import "../omarchy/current/theme/waybar.css";
+
+* {
+  background-color: @background;
+  color: @foreground;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: 'JetBrainsMono Nerd Font Mono';
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+.modules-right * {
+  font-size: 10px;
+}
+
+#workspaces button {
+  all: initial;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
+  color: #cdd6f4;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+#workspaces button.active {
+  color: #89b4fa;
+}
+
+#tray,
+#cpu,
+#battery,
+#network,
+#bluetooth,
+#pulseaudio,
+#language,
+#memory,
+#custom-screenrecording-indicator,
+#custom-update {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
+
+tooltip {
+  padding: 2px;
+}
+
+#custom-update {
+  font-size: 10px;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#custom-screenrecording-indicator {
+  min-width: 12px;
+  margin-left: 8.75px;
+  font-size: 10px;
+}
+
+#custom-screenrecording-indicator.active {
+  color: #a55555;
+}
+
+/* Colored underlines for modules */
+#bluetooth {
+  border-bottom: 2px solid #89b4fa;
+  padding-bottom: 2px;
+}
+
+#network {
+  border-bottom: 2px solid #94e2d5;
+  padding-bottom: 2px;
+}
+
+#pulseaudio {
+  border-bottom: 2px solid #cba6f7;
+  padding-bottom: 2px;
+}
+
+#language {
+  border-bottom: 2px solid #f9e2af;
+  padding-bottom: 2px;
+}
+
+#cpu {
+  border-bottom: 2px solid #fab387;
+  padding-bottom: 2px;
+}
+
+#memory {
+  border-bottom: 2px solid #a6e3a1;
+  padding-bottom: 2px;
+}
+
+#battery {
+  border-bottom: 2px solid #89dceb;
+  padding-bottom: 2px;
+}
+
+#clock {
+  border-bottom: 2px solid #f5c2e7;
+  padding-bottom: 2px;
+  margin-left: 7.5px;
+}
+
+#custom-power {
+  border-bottom: 2px solid #f38ba8;
+  padding-bottom: 2px;
+  margin: 0 7.5px;
+}
+
+#window {
+  margin-left: 12px;
+  font-size: 10px;
+  color: #cdd6f4;
+}
+
+#waybar.fullscreen #window {
+  color: #f38ba8;
+  font-weight: bold;
+}
+
+/* Hide window title when workspace is empty */
+#waybar.empty #window {
+  opacity: 0;
+}
+
