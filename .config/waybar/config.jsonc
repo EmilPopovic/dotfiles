@@ -92,8 +92,8 @@
     }
   },
   "hyprland/language": {
-    "format": "{:>12} <span color='#f9e2af'>⌨</span>",
-    "format-us": "US",
+    "format": "{:>2} <span color='#f9e2af'>⌨</span>",
+    "format-en": "US",
     "format-hr": "HR",
     "keyboard-name": "at-translated-set-2-keyboard",
     "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
@@ -105,7 +105,7 @@
   },
   "memory": {
     "interval": 1,
-    "format": "{used:4.1f}G/{total:4.1f}G <span color='#a6e3a1'>󰘚</span>",
+    "format": "{used:4.1f}G <span color='#a6e3a1'>󰘚</span>",
     "on-click": "$TERMINAL -e btop"
   },
   "battery": {
@@ -128,8 +128,8 @@
     }
   },
   "clock": {
-    "format": "{:%a %d/%m %H:%M:%S} <span color='#f5c2e7'>󰥔</span>",
-    "format-alt": "{:%a %d/%m %H:%M} <span color='#f5c2e7'>󰥔</span>",
+    "format-alt": "{:%a %d/%m %H:%M:%S} <span color='#f5c2e7'>󰥔</span>",
+    "format": "{:%a %d/%m %H:%M} <span color='#f5c2e7'>󰥔</span>",
     "tooltip": false,
     "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select",
     "interval": 1
