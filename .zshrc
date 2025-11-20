@@ -91,6 +91,7 @@ if command -v eza &> /dev/null; then
   alias lsa='ls -a'
   alias lt='eza --tree --level=2 --long --icons --git'
   alias lta='lt -a'
+  alias ltag='lta -I=.git'
 fi
 
 alias ff="fzf --preview 'bat --style=nuumbers --color=always {}'"
