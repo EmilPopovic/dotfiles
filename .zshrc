@@ -101,6 +101,10 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+# Set up USB adapter as network
+alias pynq-connect='sudo ip addr add 192.168.2.100/24 dev enp4s0f3u1u1c2 2>/dev/null; sudo sysctl -w net.ipv4.ip_forward=1 > /dev/null; sudo iptables -t nat -C POSTROUTING -o wlan0 -j MASQUERADE 2>/dev/null || sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE; sudo iptables -C FORWARD -i enp4s0f3u1u1c2 -o wlan0 -j ACCEPT 2>/dev/null || sudo iptables -A FORWARD -i enp4s0f3u1u1c2 -o wlan0 -j ACCEPT; sudo iptables -C FORWARD -i wlan0 -o enp4s0f3u1u1c2 -m state --state RELATED,ESTABLISHED -j ACCEPT 2>/dev/null || sudo iptables -A FORWARD -i wlan0 -o enp4s0f3u1u1c2 -m state --state RELATED,ESTABLISHED -j ACCEPT; echo "PYNQ connection configured!"'
+alias pynq-disconnect='sudo ip addr del 192.168.2.100/24 dev enp4s0f3u1u1c2 2>/dev/null; sudo iptables -t nat -D POSTROUTING -o wlan0 -j MASQUERADE 2>/dev/null; sudo iptables -D FORWARD -i enp4s0f3u1u1c2 -o wlan0 -j ACCEPT 2>/dev/null; sudo iptables -D FORWARD -i wlan0 -o enp4s0f3u1u1c2 -m state --state RELATED,ESTABLISHED -j ACCEPT 2>/dev/null; echo "PYNQ connection removed! Ethernet adapter ready for normal use."'
+
 # =============================================================================
 # Aliases - Tools
 # =============================================================================
