@@ -1,5 +1,3 @@
-# Zsh configuration migrated from Omarchy bash
-
 # =============================================================================
 # History
 # =============================================================================
@@ -34,8 +32,19 @@ source /opt/Xilinx/Vivado/2022.2/settings64.sh
 # Completion
 # =============================================================================
 autoload -Uz compinit && compinit
-zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+source ~/.zsh/fzf-tab/fzf-tab.plugin.zsh
+
+# --multi: Enable selecting multiple files with Tab
+# --bind: Fix 'Tab' to toggle selection and move down
+zstyle ':fzf-tab:*' fzf-flags --multi --bind 'tab:toggle+down,shift-tab:toggle+up'
+
+# Previews: use 'bat' for files and 'eza' for directories
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'bat --color=always --style=numbers $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+
+zstyle ':completion:*' menu no
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.cache/zsh
